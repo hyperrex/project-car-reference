@@ -1,0 +1,23 @@
+{
+  "name": "project-car-reference",
+  "version": "1.0.0",
+  "description": "fill this in",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyperrex/project-car-reference.git"
+  },
+  "author": "Wendell Yamada",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hyperrex/project-car-reference/issues"
+  },
+  "homepage": "https://github.com/hyperrex/project-car-reference#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.4"
+  }
+}
