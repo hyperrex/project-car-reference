@@ -1,0 +1,11 @@
+body {
+  background-color: rgb(215, 215, 215);
+}
+
+#login-form-container {
+  border-radius: 5px;
+}
+
+#login-button {
+  background-color: rgb(51, 51, 164)
+}
