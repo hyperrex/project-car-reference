@@ -2,6 +2,18 @@ body {
   background-color: rgb(215, 215, 215);
 }
 
+#view-projects-button {
+  display: none;
+}
+
+#link-photo-button {
+  display: none;
+}
+
+#logout-button {
+  display: none;
+}
+
 #login-form-container {
   display: block;
 }
@@ -10,10 +22,6 @@ body {
   display: block;
 }
 
-#view-projects-button {
-  display: none;
-}
-
-#logout-button {
+#projects-list {
   display: none;
 }

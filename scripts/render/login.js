@@ -1,3 +1,6 @@
+const baseURL = 'http://localhost:8000';
+// const baseURL = 'https://project-car-reference-api.herokuapp.com';
+
 document.addEventListener('DOMContentLoaded', () => {
   const tryLogin = event => {
     event.preventDefault();
@@ -5,11 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const password = document.querySelector('#password').value;
 
     axios
-      // .post('https://project-car-reference-api.herokuapp.com/users/', { email, password })
-      .post('http://localhost:8000/users/login/', { email, password })
+      .post(`${baseURL}/users/login/`, { email, password })
       .then(response => {
         localStorage.setItem('token', response.headers.authorization);
         console.log(localStorage.getItem('token'));
+        viewProjects();
       });
   };
   document.querySelector('#login-form').addEventListener('submit', tryLogin);
