@@ -16,121 +16,126 @@
 </head>
 
 <body>
-    <!-- Navigation -->
-    <div class="container">
-        <nav class="navbar navbar-expand bg-info text-white" id="nav-bar">
-            <div class="row">
-                <a class="navbar-brand ml-3">
-                     Project Car Reference
-                </a>
-                <div class="float-right">
-                    <button id="view-projects" class="btn btn-primary"><i class="far fa-folder-open"></i> View Projects</button>
-                    <button id="logout" class="btn btn-primary"><i class="fas fa-sign-out-alt"></i> Logout</button>
+    <div class="container-fluid">
+        <!-- Navigation -->
+        <div class="container">
+            <nav class="navbar navbar-expand bg-info text-white" id="nav-bar">
+                <div class="row">
+                    <a class="navbar-brand ml-3 w-40">
+                        Project Car Visual Reference
+                    </a>
+                    <div class="float-right">
+                        <button id="view-projects-button" class="btn btn-primary"><i class="far fa-folder-open"></i>
+                            View
+                            Projects</button>
+                        <button id="logout-button" class="btn btn-primary"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
+
+        <!-- Login -->
+        <div class="container border border-primary rounded my-5 w-50" id="login-form-container">
+            <form id="login-form" class="form text-center">
+                <h4 class="m-1 text-center">User Login</h4>
+                <div class="row">
+                    <div class="form-group text-center col-6">
+                        <label for="email" class="control-label"></label>
+                        <input required type="email" class="form-control text-center text-muted" id="email" placeholder="Email"
+                            required>
+                    </div>
+                    <div class="form-group text-center col-6">
+                        <label for="password" class="control-label"></label>
+                        <input required type="password" class="form-control text-center text-muted" id="password"
+                            placeholder="Password" required pattern="(?=^.{8,30}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+                    </div>
+                </div>
+                <div class="form-group text-center ">
+                    <button type="submit" id='login-button' class="btn btn-lg btn-primary"><i class="fas fa-sign-in-alt"></i>
+                        Sign In</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Sign Up -->
+        <div class="container border border-primary rounded my-5 w-50" id="sign-up-container">
+
+            <form id="sign-up-form" class="form text-center">
+                <h4 class="m-1 text-center">Not registered yet? Just enter your information below.</h4>
+                <div class="row">
+                    <div class="form-group text-center col-6">
+                        <label for="first-name" class="control-label"></label>
+                        <input required type="first-name" class="form-control text-center text-muted" id="first-name"
+                            placeholder="First Name" required>
+                    </div>
+
+                    <div class="form-group text-center col-6">
+                            <label for="last-name" class="control-label"></label>
+                            <input required type="last-name" class="form-control text-center text-muted" id="last-name"
+                                placeholder="Last Name" required>
+                        </div>
+
+                    
+                </div>
+
+                <div class="row">
+                        <div class="form-group text-center col-6">
+                                <label for="password" class="control-label"></label>
+                                <input required type="password" class="form-control text-center text-muted" id="sign-up-password"
+                                    placeholder="Password" required pattern="(?=^.{8,30}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+                                <small id="passwordHelpInline" class="text-center">
+                                    Must be 8-30 characters long and include upper and lower case letters, a number, and a
+                                    special
+                                    character.
+                                </small>
+                            </div>
+
+                    <div class="form-group text-center col-6">
+                        <label for="verify-password" class="control-label"></label>
+                        <input required type="password" class="form-control text-center text-muted" id="verify-password"
+                            placeholder="Re-Enter Password" required pattern="(?=^.{8,30}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+                        <small id="passwordHelpInline" class="text-center">
+                            Re-entry password to verify
+                        </small>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group text-center col-12">
+                        <label for="email" class="control-label"></label>
+                        <input required type="email" class="form-control text-center text-muted" id="email" placeholder="Email"
+                            required>
+                    </div>
+                    
+                </div>
+
+                <!-- Implement dual entry password later -->
+
+                <div class="form-group text-center">
+                    <button type="submit" id="submit-button" class="btn btn-lg btn-primary"><i class="fa fa-user-circle"></i>
+                        Register</button>
+                </div>
+
+            </form>
+
+        </div>
+
+        <!-- Projects -->
+        <div class="" id="projects">
+            <!-- layout projects as a grid -->
+        </div>
+
+        <!-- Project Photos -->
+        <div class="" id="project-photos">
+            <!-- <a href="#"><img class="img-responsive" src="" alt="Project photo reference."></a> -->
+            <!-- image title -->
+            <!-- image description -->
+        </div>
     </div>
-
-    <!-- Login -->
-    <div class="container border border-primary rounded my-5 w-25" id="login-form-container">
-        <form id="login-form" class="form text-center">
-            <h3 class="m-1 text-center">Project Car Visual Reference</h3>
-            <p>User Login</p>
-
-            <div class="form-group text-center">
-                <label for="email" class="control-label"></label>
-                <input required type="email" class="form-control text-center text-muted" id="email" placeholder="Email"
-                    required>
-            </div>
-
-            <div class="form-group text-center">
-                <label for="password" class="control-label"></label>
-                <input required type="password" class="form-control text-center text-muted" id="password" placeholder="Password"
-                    required pattern="(?=^.{8,30}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
-                <small id="passwordHelpInline" class="text-center">
-                    Must be 8-30 characters long and include upper and lower case letters, a number, and a special
-                    character.
-                </small>
-            </div>
-
-            <div class="form-group text-center">
-                <button type="submit" id='login-button' class="btn btn-lg btn-primary"><i class="fas fa-sign-in-alt"></i>
-                    Sign In</button>
-
-            </div>
-
-        </form>
-    </div>
-
-    <!-- Sign Up -->
-    <div class="container border border-primary rounded my-5 w-25" id="sign-up-container">
-
-        <form id="sign-up-form" class="form text-center">
-            <h3 class="m-1 text-center">Project Car Visual Reference</h3>
-            <p>Sign Up</p>
-
-            <div class="form-group text-center">
-                <label for="first-name" class="control-label"></label>
-                <input required type="first-name" class="form-control text-center text-muted" id="first-name"
-                    placeholder="First Name" required>
-            </div>
-
-            <div class="form-group text-center">
-                <label for="last-name" class="control-label"></label>
-                <input required type="last-name" class="form-control text-center text-muted" id="last-name" placeholder="Last Name"
-                    required>
-            </div>
-
-            <div class="form-group text-center">
-                <label for="email" class="control-label"></label>
-                <input required type="email" class="form-control text-center text-muted" id="email" placeholder="Email"
-                    required>
-            </div>
-
-            <div class="form-group text-center">
-                <label for="password" class="control-label"></label>
-                <input required type="password" class="form-control text-center text-muted" id="sign-up-password"
-                    placeholder="Password" required pattern="(?=^.{8,30}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
-                <small id="passwordHelpInline" class="text-center">
-                    Must be 8-30 characters long and include upper and lower case letters, a number, and a special
-                    character.
-                </small>
-            </div>
-            <div class="form-group text-center">
-                <label for="verify-password" class="control-label"></label>
-                <input required type="password" class="form-control text-center text-muted" id="verify-password"
-                    placeholder="Re-Enter Password" required pattern="(?=^.{8,30}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
-                <small id="passwordHelpInline" class="text-center">
-                    Re-entry password to verify
-                </small>
-            </div>
-
-            <!-- Implement dual entry password later -->
-
-            <div class="form-group text-center">
-                <button type="submit" id="submit-button" class="btn btn-lg btn-primary"><i class="fa fa-user-circle"></i>
-                    Submit</button>
-            </div>
-
-        </form>
-
-    </div>
-
-    <!-- Projects -->
-    <div class="" id="projects">
-        <!-- layout projects as a grid -->
-    </div>
-
-    <!-- Project Photos -->
-    <div class="" id="project-photos">
-        <!-- <a href="#"><img class="img-responsive" src="" alt="Project photo reference."></a> -->
-        <!-- image title -->
-        <!-- image description -->
-    </div>
-
     <!-- Scripts -->
     <script src="./scripts/render/login.js" charset="utf-8"></script>
     <script src="./scripts/render/signup.js" charset="utf-8"></script>
+    <script src="./scripts/templates/navigation-template.js" charset="utf-8"></script>
 </body>
 
 </html>

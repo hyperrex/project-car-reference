@@ -2,10 +2,18 @@ body {
   background-color: rgb(215, 215, 215);
 }
 
-/* #login-form-container {
-  display: none;
+#login-form-container {
+  display: block;
 }
 
 #sign-up-container {
+  display: block;
+}
+
+#view-projects-button {
   display: none;
-} */
+}
+
+#logout-button {
+  display: none;
+}
