@@ -6,6 +6,10 @@ body {
   display: block;
 }
 
+#view-my-projects-button {
+  display: none;
+}
+
 #link-photo-button {
   display: none;
 }
@@ -22,6 +26,11 @@ body {
   display: block;
 }
 
-#projects {
+#projects-container {
   display: none;
 }
+
+#project-photos-container {
+  display: none;
+}
+

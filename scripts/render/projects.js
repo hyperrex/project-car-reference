@@ -15,10 +15,20 @@ const getAllProjects = () => {
 const renderProjects = data => {
   const list = document.querySelector('#projects-list');
   data.forEach(project => {
-    var button = document.createElement("button");
-    button.setAttribute('id', `button-${project.id}`);
+    const button = document.createElement('button');
+    button.setAttribute('id', `${project.id}`);
     button.setAttribute('class', 'btn btn-primary btn-block mb-3');
     button.innerHTML = `${project.name}`;
+    button.addEventListener('click', renderProject);
     list.appendChild(button);
+  });
+};
+
+const renderProject = event => {
+  const project = event.target.id;
+  axios
+  .get(`http://localhost:8000/projects/${project}`)
+  .then(result => {
+    console.log(result.data);
   });
 };
