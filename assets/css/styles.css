@@ -30,6 +30,10 @@ body {
   display: none;
 }
 
+#my-projects-container {
+  display: none;
+}
+
 #project-photos-container {
   display: none;
 }

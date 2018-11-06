@@ -9,6 +9,7 @@ const loginForm = () => {
   document.querySelector('#login-form-container').style.display = 'block';
   document.querySelector('#sign-up-container').style.display = 'block';
   document.querySelector('#projects-container').style.display = 'none';
+  document.querySelector('#my-projects-container').style.display = 'none';
 };
 
 const viewProjects = () => {
@@ -19,11 +20,24 @@ const viewProjects = () => {
   document.querySelector('#login-form-container').style.display = 'none';
   document.querySelector('#sign-up-container').style.display = 'none';
   document.querySelector('#projects-container').style.display = 'block';
+  document.querySelector('#my-projects-container').style.display = 'none';
   getAllProjects();
+};
+
+const viewMyProjects = () => {
+  document.querySelector('#view-projects-button').style.display = 'block';
+  document.querySelector('#view-my-projects-button').style.display = 'block';
+  document.querySelector('#link-photo-button').style.display = 'none';
+  document.querySelector('#logout-button').style.display = 'block';
+  document.querySelector('#login-form-container').style.display = 'none';
+  document.querySelector('#sign-up-container').style.display = 'none';
+  document.querySelector('#projects-container').style.display = 'none';
+  document.querySelector('#my-projects-container').style.display = 'block';
+  getUserProjects();
 };
 
 // Event Listeners ////////////////////////////////////////////////////////////
 
 document.querySelector('#view-projects-button').addEventListener('click', viewProjects);
-
+document.querySelector('#view-my-projects-button').addEventListener('click', viewMyProjects);
 document.querySelector('#logout-button').addEventListener('click', loginForm);

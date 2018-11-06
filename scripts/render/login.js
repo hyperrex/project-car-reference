@@ -9,8 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
     axios
       .post('http://localhost:8000/users/login/', { email, password })
       .then(response => {
+        console.log(response.data[0].id);
         localStorage.setItem('token', response.headers.authorization);
-        console.log(localStorage.getItem('token'));
+        localStorage.setItem('user', response.data[0].id);
+        console.log(localStorage.getItem('user'));
         viewProjects();
       });
   };
