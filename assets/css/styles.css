@@ -3,7 +3,7 @@ body {
 }
 
 #view-projects-button {
-  display: none;
+  display: block;
 }
 
 #link-photo-button {
@@ -22,6 +22,6 @@ body {
   display: block;
 }
 
-#projects-list {
+#projects {
   display: none;
 }

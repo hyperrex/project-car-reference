@@ -1,5 +1,4 @@
-const baseURL = 'http://localhost:8000';
-// const baseURL = 'https://project-car-reference-api.herokuapp.com';
+// 'https://project-car-reference-api.herokuapp.com';
 
 document.addEventListener('DOMContentLoaded', () => {
   const tryLogin = event => {
@@ -8,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const password = document.querySelector('#password').value;
 
     axios
-      .post(`${baseURL}/users/login/`, { email, password })
+      .post('http://localhost:8000/users/login/', { email, password })
       .then(response => {
         localStorage.setItem('token', response.headers.authorization);
         console.log(localStorage.getItem('token'));

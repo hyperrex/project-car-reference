@@ -13,10 +13,12 @@ const loginForm = () => {
 const viewProjects = () => {
   document.querySelector('#login-form-container').style.display = 'none';
   document.querySelector('#sign-up-container').style.display = 'none';
-  document.querySelector('#projects-list').style.display = 'block';
-  document.querySelector('#view-projects').style.display = 'none';
+  document.querySelector('#projects').style.display = 'block';
+  document.querySelector('#view-projects-button').style.display = 'none';
   document.querySelector('#link-photo-button').style.display = 'none';
   document.querySelector('#logout-button').style.display = 'block';
+  console.log('Projects button pressed!');
+  getAllProjects();
 };
 
 // Event Listeners ////////////////////////////////////////////////////////////
