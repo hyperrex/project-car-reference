@@ -3,7 +3,7 @@ body {
 }
 
 #view-projects-button {
-  display: block;
+  display: none;
 }
 
 #view-my-projects-button {
