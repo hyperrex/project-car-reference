@@ -29,8 +29,10 @@
                             View All Projects</button>
                         <button id="view-my-projects-button" class="btn btn-primary ml-2"><i class="far fa-folder-open"></i>
                             My Projects</button>
-                        <button id="link-photo-button" class="btn btn-primary ml-2"><i class="far fa-images"></i> Add
-                            Photo</button>
+                        <button id="create-project-button" class="btn btn-primary ml-2"><i class="fas fa-plus"></i>
+                            Create Project</button>
+                        <!-- <button id="link-photo-button" class="btn btn-primary ml-2"><i class="far fa-images"></i> Add
+                            Photo</button> -->
                         <button id="logout-button" class="btn btn-primary ml-2"><i class="fas fa-sign-out-alt"></i>
                             Logout</button>
                     </div>
@@ -122,6 +124,31 @@
 
         </div>
 
+         <!-- Create Project -->
+         <div class="container border border-primary rounded my-5 w-50" id="create-project-container">
+            <form id="create-project-form" class="form text-center">
+                <h4 class="m-1 text-center">Create Project</h4>
+
+                    <div class="form-group text-center">
+                        <label for="project-title" class="control-label"></label>
+                        <input required type="text" class="form-control text-center" id="project-title" placeholder="Title"
+                            required>
+                    </div>
+
+                    <div class="form-group text-center">
+                        <label for="project-description" class="control-label"></label>
+                        <input required type="text" class="form-control text-center" id="project-description"
+                            placeholder="Description">
+                    </div>
+
+                <div class="form-group text-center ">
+                    <button type="submit" id="submit-project-button" class="btn btn-lg btn-primary"><i class="fas fa-plus"></i>
+                        Create Project</button>
+                </div>
+
+            </form>
+        </div>
+
         <!-- Projects List -->
         <div class="container my-5 w-50 text-center" id="projects-container">
             <h4>Project List</h4>
@@ -150,16 +177,13 @@
 
         <!-- Project Photos -->
         <div class="container w-auto p-3" id="project-photos-container">
-            <!-- <a href="#"><img class="img-responsive" src="" alt="Project photo reference."></a> -->
-            <!-- image title -->
-            <!-- image description -->
         </div>
     </div>
     <!-- Scripts -->
     <script src="./scripts/render/login.js" charset="utf-8"></script>
     <script src="./scripts/render/signup.js" charset="utf-8"></script>
     <script src="./scripts/render/projects.js" charset="utf-8"></script>
-    <script src="./scripts/render/project.js" charset="utf-8"></script>
+    <script src="./scripts/render/create-project.js" charset="utf-8"></script>
     <script src="./scripts/render/user-projects.js" charset="utf-8"></script>
     <script src="./scripts/templates/navigation-template.js" charset="utf-8"></script>
 </body>

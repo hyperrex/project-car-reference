@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('token', response.headers.authorization);
         localStorage.setItem('user', response.data[0].id);
         console.log(localStorage.getItem('user'));
-        viewProjects();
+        viewMyProjects();
       });
   };
   document.querySelector('#login-form').addEventListener('submit', tryLogin);

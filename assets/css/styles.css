@@ -10,9 +10,13 @@ body {
   display: none;
 }
 
-#link-photo-button {
+#create-project-button {
   display: none;
 }
+
+/* #link-photo-button {
+  display: none;
+} */
 
 #logout-button {
   display: none;
@@ -31,6 +35,10 @@ body {
 }
 
 #my-projects-container {
+  display: none;
+}
+
+#create-project-container {
   display: none;
 }
 

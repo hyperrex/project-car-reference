@@ -45,7 +45,7 @@ const renderUserProjects = data => {
     deleteButton.setAttribute('id', `${project.id}`);
     deleteButton.setAttribute('class', 'btn btn-outline-danger btn-block mb-3');
     deleteButton.innerHTML = 'Delete';
-    deleteButton.addEventListener('click', renderUserProject);
+    deleteButton.addEventListener('click', deleteUserProject);
     deleteButtonList.appendChild(deleteButton);
   });
 };
@@ -59,7 +59,10 @@ const renderUserProject = event => {
     renderedProject.innerHTML = '';
     photos.forEach(photo => {
       let imageContainer = document.createElement('div');
-      imageContainer.setAttribute('class', 'container border border-primary rounded mb-3 p-5');
+      imageContainer.setAttribute(
+        'class',
+        'container border border-primary rounded mb-3 p-5'
+      );
 
       let image = document.createElement('img');
       image.setAttribute('src', `${photo.url}`);
@@ -76,5 +79,13 @@ const renderUserProject = event => {
 
       renderedProject.appendChild(imageContainer);
     });
+  });
+};
+
+const deleteUserProject = event => {
+  const project = event.target.id;
+  axios.delete(`http://localhost:8000/projects/${project}`).then(result => {
+    console.log(result.data);
+    getUserProjects()
   });
 };
