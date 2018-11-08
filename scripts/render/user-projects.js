@@ -1,10 +1,11 @@
 // 'https://project-car-reference-api.herokuapp.com'
-
+console.log('Project Page Loading')
 const getUserProjects = () => {
   const id = localStorage.getItem('user');
   axios
     .get(`http://localhost:8000/users/projects/${id}`)
     .then(result => {
+      console.log(result.data)
       renderUserProjects(result.data);
     })
     .catch(err => {
@@ -19,7 +20,7 @@ const renderUserProjects = data => {
     const button = document.createElement('button');
     button.setAttribute('id', `${project.id}`);
     button.setAttribute('class', 'btn btn-primary btn-block mb-3');
-    button.innerHTML = `${project.name}`;
+    button.innerHTML = `${project.title}`;
     button.addEventListener('click', viewProject);
     button.addEventListener('click', renderUserProject);
     list.appendChild(button);

@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  console.log('Sign Up Page Loading')
   const signup = event => {
     event.preventDefault();
     const first_name = document.querySelector('#first-name').value;

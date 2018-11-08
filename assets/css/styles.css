@@ -2,10 +2,6 @@ body {
   background-color: rgb(215, 215, 215);
 }
 
-#view-projects-button {
-  display: none;
-}
-
 #view-my-projects-button {
   display: none;
 }
@@ -14,9 +10,9 @@ body {
   display: none;
 }
 
-/* #link-photo-button {
+#link-photo-button {
   display: none;
-} */
+}
 
 #logout-button {
   display: none;
