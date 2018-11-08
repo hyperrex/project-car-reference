@@ -57,7 +57,18 @@ const renderUserProject = event => {
     console.log(result.data);
     const renderedProject = document.querySelector('#project-photos-container');
     const photos = result.data.photos;
+    const projTitle = result.data.title;
+    const projDesc = result.data.description;
     renderedProject.innerHTML = '';
+
+    let projectTitle = document.createElement('h4');
+    projectTitle.innerHTML = `${projTitle}`;
+    renderedProject.appendChild(projectTitle);
+
+    let projectDescription = document.createElement('p');
+    projectDescription.innerHTML = `${projDesc}`;
+    renderedProject.appendChild(projectDescription);
+
     photos.forEach(photo => {
       let imageContainer = document.createElement('div');
       imageContainer.setAttribute(
