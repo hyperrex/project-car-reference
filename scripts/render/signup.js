@@ -3,11 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
     event.preventDefault();
     const first_name = document.querySelector('#first-name').value;
     const last_name = document.querySelector('#last-name').value;
-    const email = document.querySelector('#email').value;
+    const email = document.querySelector('#create-email').value;
     const password = document.querySelector('#sign-up-password').value;
     const verified = document.querySelector('#verify-password').value;
 
-    if (signUpPassword !== verified) {
+    if (password !== verified) {
       return alert('Passwords must match!');
     }
 
@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .then(response => {
         console.log(response);
+        viewMyProjects();
       });
   };
   document.querySelector('#sign-up-form').addEventListener('submit', signup);

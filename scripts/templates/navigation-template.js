@@ -4,6 +4,11 @@ const loginForm = () => {
   localStorage.clear();
   document.querySelector('#email').value = '';
   document.querySelector('#password').value = '';
+  document.querySelector('#first-name').value = '';
+  document.querySelector('#last-name').value = '';
+  document.querySelector('#create-email').value = '';
+  document.querySelector('#sign-up-password').value = '';
+  document.querySelector('#verify-password').value = '';
   document.querySelector('#view-my-projects-button').style.display = 'none';
   document.querySelector('#create-project-button').style.display = 'none';
   document.querySelector('#link-photo-button').style.display = 'none';
