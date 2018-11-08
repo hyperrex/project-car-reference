@@ -38,6 +38,10 @@ body {
   display: none;
 }
 
+#edit-project-container {
+  display: none;
+}
+
 #project-photos-container {
   display: none;
 }

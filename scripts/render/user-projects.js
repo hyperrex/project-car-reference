@@ -33,7 +33,7 @@ const renderUserProjects = data => {
     editButton.setAttribute('id', `${project.id}`);
     editButton.setAttribute('class', 'btn btn-outline-info btn-block mb-3');
     editButton.innerHTML = 'Edit';
-    editButton.addEventListener('click', editUserProject);
+    editButton.addEventListener('click', editProject);
     editButtonList.appendChild(editButton);
   });
   const deleteButtonList = document.querySelector(
@@ -68,6 +68,20 @@ const renderUserProject = event => {
     projectDescription.innerHTML = `${projDesc}`;
     renderedProject.appendChild(projectDescription);
 
+    let editButton = document.createElement('button');
+    editButton.setAttribute('id', `${project}`);
+    editButton.setAttribute('class', 'btn btn-info btn-block mb-3');
+    editButton.innerHTML = 'Edit';
+    editButton.addEventListener('click', editProject);
+    renderedProject.appendChild(editButton);
+
+    let deleteButton = document.createElement('button');
+    deleteButton.setAttribute('id', `${project}`);
+    deleteButton.setAttribute('class', 'btn btn-danger btn-block mb-3');
+    deleteButton.innerHTML = 'Delete Project';
+    deleteButton.addEventListener('click', deleteUserProject);
+    renderedProject.appendChild(deleteButton);
+
     photos.forEach(photo => {
       let imageContainer = document.createElement('div');
       imageContainer.setAttribute(
@@ -97,20 +111,25 @@ const deleteUserProject = event => {
   const project = event.target.id;
   axios.delete(`http://localhost:8000/projects/${project}`).then(result => {
     console.log(result.data);
-    getUserProjects()
+    viewMyProjects()
   });
 };
 
 const editUserProject = event => {
   event.preventDefault();
-  let title = document.querySelector('#project-title').value;
-  let description = document.querySelector('#project-description').value;
-  console.log('>>>>>>>', title, description);
+  const id = localStorage.getItem('project');
+  console.log('Does this exist?', id)
+  let title = document.querySelector('#edit-project-title').value;
+  let description = document.querySelector('#edit-project-description').value;
   axios
     // .post('https://project-car-reference-api.herokuapp.com/projects/', { title, description })
-    .post('http://localhost:8000/projects/', { title, description })
+    .put(`http://localhost:8000/projects/${id}`, { title, description })
     .then(response => {
       console.log(response);
       viewMyProjects();
     });
 };
+
+document
+  .querySelector('#submit-edit-project-button')
+  .addEventListener('click', editUserProject);

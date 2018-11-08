@@ -18,6 +18,7 @@ const loginForm = () => {
   document.querySelector('#my-projects-container').style.display = 'none';
   document.querySelector('#project-photos-container').style.display = 'none';
   document.querySelector('#create-project-container').style.display = 'none';
+  document.querySelector('#edit-project-container').style.display = 'none';
 };
 
 const createProject = () => {
@@ -32,6 +33,20 @@ const createProject = () => {
   document.querySelector('#my-projects-container').style.display = 'none';
   document.querySelector('#project-photos-container').style.display = 'none';
   document.querySelector('#create-project-container').style.display = 'block';
+  document.querySelector('#edit-project-container').style.display = 'none';
+};
+
+const editProject = () => {
+  document.querySelector('#view-my-projects-button').style.display = 'block';
+  document.querySelector('#create-project-button').style.display = 'none';
+  document.querySelector('#link-photo-button').style.display = 'none';
+  document.querySelector('#logout-button').style.display = 'block';
+  document.querySelector('#login-form-container').style.display = 'none';
+  document.querySelector('#sign-up-container').style.display = 'none';
+  document.querySelector('#my-projects-container').style.display = 'none';
+  document.querySelector('#project-photos-container').style.display = 'none';
+  document.querySelector('#create-project-container').style.display = 'none';
+  document.querySelector('#edit-project-container').style.display = 'block';
 };
 
 const viewMyProjects = () => {
@@ -44,6 +59,7 @@ const viewMyProjects = () => {
   document.querySelector('#my-projects-container').style.display = 'block';
   document.querySelector('#project-photos-container').style.display = 'none';
   document.querySelector('#create-project-container').style.display = 'none';
+  document.querySelector('#edit-project-container').style.display = 'none';
   getUserProjects()
 };
 
@@ -57,6 +73,7 @@ const viewProject = () => {
   document.querySelector('#my-projects-container').style.display = 'none';
   document.querySelector('#project-photos-container').style.display = 'block';
   document.querySelector('#create-project-container').style.display = 'none';
+  document.querySelector('#edit-project-container').style.display = 'none';
 };
 
 // Event Listeners ////////////////////////////////////////////////////////////
@@ -64,6 +81,3 @@ const viewProject = () => {
 document.querySelector('#view-my-projects-button').addEventListener('click', viewMyProjects);
 document.querySelector('#logout-button').addEventListener('click', loginForm);
 document.querySelector('#create-project-button').addEventListener('click', createProject);
-
-
-

@@ -131,19 +131,42 @@
 
                     <div class="form-group text-center">
                         <label for="project-title" class="control-label"></label>
-                        <input required type="text" class="form-control text-center" id="project-title" onfocus="this.value=''" placeholder="Title"
+                        <input required type="text" class="form-control text-center" id="project-title" placeholder="Title"
                             required>
                     </div>
 
                     <div class="form-group text-center">
                         <label for="project-description" class="control-label"></label>
                         <input required type="text" class="form-control text-center" id="project-description"
-                        onfocus="this.value=''" placeholder="Description">
+                        placeholder="Description">
                     </div>
 
                 <div class="form-group text-center ">
                     <button id="submit-project-button" class="btn btn-lg btn-primary"><i class="fas fa-plus"></i>
                         Create Project</button>
+                </div>
+
+            </form>
+        </div>
+
+        <!-- Edit Project -->
+        <div class="container border border-primary rounded my-5 w-50" id="edit-project-container">
+            <form id="edit-project-form" class="form text-center">
+                <h4 class="m-1 text-center">Edit Project</h4>
+
+                    <div class="form-group text-center">
+                        <label for="edit-project-title" class="control-label"></label>
+                        <input required type="text" class="form-control text-center" id="edit-project-title" required>
+                    </div>
+
+                    <div class="form-group text-center">
+                        <label for="edit-project-description" class="control-label"></label>
+                        <input required type="text" class="form-control text-center" id="edit-project-description">
+                    </div>
+
+                <div class="form-group text-center ">
+                    <button id="submit-edit-project-button" class="btn btn-lg btn-primary"><i class="fas fa-plus"></i>
+                        Submit Changes</button>
                 </div>
 
             </form>
