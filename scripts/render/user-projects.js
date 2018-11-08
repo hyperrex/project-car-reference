@@ -24,30 +24,6 @@ const renderUserProjects = data => {
     button.addEventListener('click', renderUserProject);
     list.appendChild(button);
   });
-  const editButtonList = document.querySelector(
-    '#my-projects-list-edit-button'
-  );
-  editButtonList.innerHTML = '';
-  data.forEach(project => {
-    const editButton = document.createElement('button');
-    editButton.setAttribute('id', `${project.id}`);
-    editButton.setAttribute('class', 'btn btn-outline-info btn-block mb-3');
-    editButton.innerHTML = 'Edit';
-    editButton.addEventListener('click', editProject);
-    editButtonList.appendChild(editButton);
-  });
-  const deleteButtonList = document.querySelector(
-    '#my-projects-list-delete-button'
-  );
-  deleteButtonList.innerHTML = '';
-  data.forEach(project => {
-    const deleteButton = document.createElement('button');
-    deleteButton.setAttribute('id', `${project.id}`);
-    deleteButton.setAttribute('class', 'btn btn-outline-danger btn-block mb-3');
-    deleteButton.innerHTML = 'Delete';
-    deleteButton.addEventListener('click', deleteUserProject);
-    deleteButtonList.appendChild(deleteButton);
-  });
 };
 
 const renderUserProject = event => {
