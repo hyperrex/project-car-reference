@@ -1,5 +1,4 @@
 // 'https://project-car-reference-api.herokuapp.com'
-console.log('Project Page Loading')
 const getUserProjects = () => {
   const id = localStorage.getItem('user');
   axios
@@ -15,6 +14,7 @@ const getUserProjects = () => {
 
 const renderUserProjects = data => {
   const list = document.querySelector('#my-projects-list');
+  localStorage.removeItem('project');
   list.innerHTML = '';
   data.forEach(project => {
     const button = document.createElement('button');
@@ -53,6 +53,7 @@ const renderUserProjects = data => {
 
 const renderUserProject = event => {
   const project = event.target.id;
+  localStorage.setItem('project', project);
   axios.get(`http://localhost:8000/projects/${project}`).then(result => {
     console.log(result.data);
     const renderedProject = document.querySelector('#project-photos-container');
@@ -101,3 +102,17 @@ const deleteUserProject = event => {
     getUserProjects()
   });
 };
+
+// const editProject = event => {
+//   event.preventDefault();
+//   let title = document.querySelector('#project-title').value;
+//   let description = document.querySelector('#project-description').value;
+//   console.log('>>>>>>>', title, description);
+//   axios
+//     // .post('https://project-car-reference-api.herokuapp.com/projects/', { title, description })
+//     .post('http://localhost:8000/projects/', { title, description })
+//     .then(response => {
+//       console.log(response);
+//       viewMyProjects();
+//     });
+// };

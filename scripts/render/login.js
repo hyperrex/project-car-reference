@@ -1,7 +1,6 @@
 // 'https://project-car-reference-api.herokuapp.com';
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('Log In Page Loading')
   const tryLogin = event => {
     event.preventDefault();
     const email = document.querySelector('#email').value;

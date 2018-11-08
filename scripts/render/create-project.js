@@ -1,7 +1,4 @@
-console.log('Create Project Page Loading');
-
 const createNewProject = event => {
-  console.log('This is also working');
   event.preventDefault();
   let title = document.querySelector('#project-title').value;
   let description = document.querySelector('#project-description').value;
