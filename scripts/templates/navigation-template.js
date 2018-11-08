@@ -2,6 +2,8 @@
 
 const loginForm = () => {
   localStorage.clear();
+  document.querySelector('#email').value = '';
+  document.querySelector('#password').value = '';
   document.querySelector('#view-my-projects-button').style.display = 'none';
   document.querySelector('#create-project-button').style.display = 'none';
   document.querySelector('#link-photo-button').style.display = 'none';
@@ -14,6 +16,8 @@ const loginForm = () => {
 };
 
 const createProject = () => {
+  document.querySelector('#project-title').value = '';
+  document.querySelector('#project-description').value = '';
   document.querySelector('#view-my-projects-button').style.display = 'block';
   document.querySelector('#create-project-button').style.display = 'none';
   document.querySelector('#link-photo-button').style.display = 'none';
@@ -23,8 +27,6 @@ const createProject = () => {
   document.querySelector('#my-projects-container').style.display = 'none';
   document.querySelector('#project-photos-container').style.display = 'none';
   document.querySelector('#create-project-container').style.display = 'block';
-  document.querySelector('#project-title').value = '';
-  document.querySelector('#project-description').value = '';
 };
 
 const viewMyProjects = () => {
