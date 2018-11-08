@@ -4,7 +4,6 @@ const getUserProjects = () => {
   axios
     .get(`http://localhost:8000/users/projects/${id}`)
     .then(result => {
-      console.log(result.data)
       renderUserProjects(result.data);
     })
     .catch(err => {
@@ -34,7 +33,7 @@ const renderUserProjects = data => {
     editButton.setAttribute('id', `${project.id}`);
     editButton.setAttribute('class', 'btn btn-outline-info btn-block mb-3');
     editButton.innerHTML = 'Edit';
-    editButton.addEventListener('click', renderUserProject);
+    editButton.addEventListener('click', editUserProject);
     editButtonList.appendChild(editButton);
   });
   const deleteButtonList = document.querySelector(
@@ -55,7 +54,6 @@ const renderUserProject = event => {
   const project = event.target.id;
   localStorage.setItem('project', project);
   axios.get(`http://localhost:8000/projects/${project}`).then(result => {
-    console.log(result.data);
     const renderedProject = document.querySelector('#project-photos-container');
     const photos = result.data.photos;
     const projTitle = result.data.title;
@@ -103,16 +101,16 @@ const deleteUserProject = event => {
   });
 };
 
-// const editProject = event => {
-//   event.preventDefault();
-//   let title = document.querySelector('#project-title').value;
-//   let description = document.querySelector('#project-description').value;
-//   console.log('>>>>>>>', title, description);
-//   axios
-//     // .post('https://project-car-reference-api.herokuapp.com/projects/', { title, description })
-//     .post('http://localhost:8000/projects/', { title, description })
-//     .then(response => {
-//       console.log(response);
-//       viewMyProjects();
-//     });
-// };
+const editUserProject = event => {
+  event.preventDefault();
+  let title = document.querySelector('#project-title').value;
+  let description = document.querySelector('#project-description').value;
+  console.log('>>>>>>>', title, description);
+  axios
+    // .post('https://project-car-reference-api.herokuapp.com/projects/', { title, description })
+    .post('http://localhost:8000/projects/', { title, description })
+    .then(response => {
+      console.log(response);
+      viewMyProjects();
+    });
+};
