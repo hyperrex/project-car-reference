@@ -1,7 +1,7 @@
-// 'https://project-car-reference-api.herokuapp.com'
 const getUserProjects = () => {
   const id = localStorage.getItem('user');
   axios
+    // .get(`https://project-car-reference-api.herokuapp.com/users/projects/${id}`)
     .get(`http://localhost:8000/users/projects/${id}`)
     .then(result => {
       renderUserProjects(result.data);
@@ -29,6 +29,7 @@ const renderUserProjects = data => {
 const renderUserProject = event => {
   const project = event.target.id;
   localStorage.setItem('project', project);
+  // axios.get(`https://project-car-reference-api.herokuapp.com/projects/${project}`).then(result => {
   axios.get(`http://localhost:8000/projects/${project}`).then(result => {
     const renderedProject = document.querySelector('#project-container');
     const photos = result.data.photos;
@@ -92,9 +93,10 @@ const renderUserProject = event => {
 
 const deleteUserProject = event => {
   const project = event.target.id;
+  // axios.delete(`https://project-car-reference-api.herokuapp.com/projects/${project}`).then(result => {
   axios.delete(`http://localhost:8000/projects/${project}`).then(result => {
     console.log(result.data);
-    viewMyProjects()
+    viewMyProjects();
   });
 };
 
@@ -104,7 +106,7 @@ const editUserProject = event => {
   let title = document.querySelector('#edit-project-title').value;
   let description = document.querySelector('#edit-project-description').value;
   axios
-    // .post('https://project-car-reference-api.herokuapp.com/projects/', { title, description })
+    // .put(`https://project-car-reference-api.herokuapp.com/projects/${id}`, { title, description })
     .put(`http://localhost:8000/projects/${id}`, { title, description })
     .then(response => {
       console.log(response);

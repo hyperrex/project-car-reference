@@ -10,7 +10,7 @@ const createNewProject = event => {
       console.log(response);
       let projects_id = response.data[0].id;
       axios
-        // .post('https://project-car-reference-api.herokuapp.com/userProjects/', { title, description })
+        // .post('https://project-car-reference-api.herokuapp.com/userProject/', { users_id, projects_id })
         .post('http://localhost:8000/userProject/', { users_id, projects_id })
         .then(response => {
           console.log(response);
