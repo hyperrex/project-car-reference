@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     axios
-      // .post('https://project-car-reference-api.herokuapp.com/users/', { first_name, last_name, email, password })
-      .post('http://localhost:8000/users/', { first_name, last_name, email, password })
+      .post('https://project-car-reference-api.herokuapp.com/users/', { first_name, last_name, email, password })
+      // .post('http://localhost:8000/users/', { first_name, last_name, email, password })
       .then(response => {
         console.log(response);
         viewMyProjects();
