@@ -11,14 +11,14 @@ const loginForm = () => {
   document.querySelector('#verify-password').value = '';
   document.querySelector('#view-my-projects-button').style.display = 'none';
   document.querySelector('#create-project-button').style.display = 'none';
-  document.querySelector('#link-photo-button').style.display = 'none';
   document.querySelector('#logout-button').style.display = 'none';
   document.querySelector('#login-form-container').style.display = 'block';
   document.querySelector('#sign-up-container').style.display = 'block';
   document.querySelector('#my-projects-container').style.display = 'none';
-  document.querySelector('#project-photos-container').style.display = 'none';
+  document.querySelector('#project-container').style.display = 'none';
   document.querySelector('#create-project-container').style.display = 'none';
   document.querySelector('#edit-project-container').style.display = 'none';
+  document.querySelector('#photos-form-container').style.display = 'none';
 };
 
 const createProject = () => {
@@ -26,56 +26,68 @@ const createProject = () => {
   document.querySelector('#project-description').value = '';
   document.querySelector('#view-my-projects-button').style.display = 'block';
   document.querySelector('#create-project-button').style.display = 'none';
-  document.querySelector('#link-photo-button').style.display = 'none';
   document.querySelector('#logout-button').style.display = 'block';
   document.querySelector('#login-form-container').style.display = 'none';
   document.querySelector('#sign-up-container').style.display = 'none';
   document.querySelector('#my-projects-container').style.display = 'none';
-  document.querySelector('#project-photos-container').style.display = 'none';
+  document.querySelector('#project-container').style.display = 'none';
   document.querySelector('#create-project-container').style.display = 'block';
   document.querySelector('#edit-project-container').style.display = 'none';
+  document.querySelector('#photos-form-container').style.display = 'none';
 };
 
 const editProject = () => {
   document.querySelector('#view-my-projects-button').style.display = 'block';
   document.querySelector('#create-project-button').style.display = 'none';
-  document.querySelector('#link-photo-button').style.display = 'none';
   document.querySelector('#logout-button').style.display = 'block';
   document.querySelector('#login-form-container').style.display = 'none';
   document.querySelector('#sign-up-container').style.display = 'none';
   document.querySelector('#my-projects-container').style.display = 'none';
-  document.querySelector('#project-photos-container').style.display = 'none';
+  document.querySelector('#project-container').style.display = 'none';
   document.querySelector('#create-project-container').style.display = 'none';
   document.querySelector('#edit-project-container').style.display = 'block';
+  document.querySelector('#photos-form-container').style.display = 'none';
 };
 
 const viewMyProjects = () => {
   document.querySelector('#view-my-projects-button').style.display = 'block';
   document.querySelector('#create-project-button').style.display = 'block';
-  document.querySelector('#link-photo-button').style.display = 'none';
   document.querySelector('#logout-button').style.display = 'block';
   document.querySelector('#login-form-container').style.display = 'none';
   document.querySelector('#sign-up-container').style.display = 'none';
   document.querySelector('#my-projects-container').style.display = 'block';
-  document.querySelector('#project-photos-container').style.display = 'none';
+  document.querySelector('#project-container').style.display = 'none';
   document.querySelector('#create-project-container').style.display = 'none';
   document.querySelector('#edit-project-container').style.display = 'none';
+  document.querySelector('#photos-form-container').style.display = 'none';
   getUserProjects()
 };
 
 const viewProject = () => {
   document.querySelector('#view-my-projects-button').style.display = 'block';
   document.querySelector('#create-project-button').style.display = 'block';
-  document.querySelector('#link-photo-button').style.display = 'block';
   document.querySelector('#logout-button').style.display = 'block';
   document.querySelector('#login-form-container').style.display = 'none';
   document.querySelector('#sign-up-container').style.display = 'none';
   document.querySelector('#my-projects-container').style.display = 'none';
-  document.querySelector('#project-photos-container').style.display = 'block';
+  document.querySelector('#project-container').style.display = 'block';
   document.querySelector('#create-project-container').style.display = 'none';
   document.querySelector('#edit-project-container').style.display = 'none';
+  document.querySelector('#photos-form-container').style.display = 'none';
 };
 
+const addPhoto = () => {
+  document.querySelector('#view-my-projects-button').style.display = 'block';
+  document.querySelector('#create-project-button').style.display = 'block';
+  document.querySelector('#logout-button').style.display = 'block';
+  document.querySelector('#login-form-container').style.display = 'none';
+  document.querySelector('#sign-up-container').style.display = 'none';
+  document.querySelector('#my-projects-container').style.display = 'none';
+  document.querySelector('#project-container').style.display = 'none';
+  document.querySelector('#create-project-container').style.display = 'none';
+  document.querySelector('#edit-project-container').style.display = 'none';
+  document.querySelector('#photos-form-container').style.display = 'block';
+};
 // Event Listeners ////////////////////////////////////////////////////////////
 
 document.querySelector('#view-my-projects-button').addEventListener('click', viewMyProjects);

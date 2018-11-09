@@ -1,196 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Project Car Reference</title>
-    <link rel="stylesheet" href="./assets/css/styles.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <div class="container-fluid">
-        <!-- Navigation -->
-        <div class="container">
-            <nav class="navbar navbar-expand bg-info text-white" id="nav-bar">
-                <div class="row">
-                    <a class="navbar-brand ml-3 w-40">
-                        Project Car Visual Reference
-                    </a>
-                    <div class="row ml-2">
-                        <button id="view-my-projects-button" class="btn btn-primary ml-2"><i class="far fa-folder-open"></i>
-                            My Projects</button>
-                        <button id="create-project-button" class="btn btn-primary ml-2"><i class="fas fa-plus"></i>
-                            Create Project</button>
-                        <button id="link-photo-button" class="btn btn-primary ml-2"><i class="far fa-images"></i> Add
-                            Photo</button>
-                        <button id="logout-button" class="btn btn-primary ml-2"><i class="fas fa-sign-out-alt"></i>
-                            Logout</button>
-                    </div>
-                </div>
-            </nav>
-        </div>
-
-        <!-- Login -->
-        <div class="container border border-primary rounded my-5 w-50" id="login-form-container">
-            <form id="login-form" class="form text-center">
-                <h4 class="m-1 text-center">User Login</h4>
-                <div class="row">
-                    <div class="form-group text-center col-12">
-                        <label for="email" class="control-label"></label>
-                        <input required type="email" class="form-control text-center text-muted" id="email" placeholder="Email"
-                            required>
-                    </div>
-                    <div class="form-group text-center col-12">
-                        <label for="password" class="control-label"></label>
-                        <input required type="password" class="form-control text-center text-muted" id="password"
-                            placeholder="Password" required pattern="(?=^.{8,30}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
-                    </div>
-                </div>
-                <div class="form-group text-center ">
-                    <button type="submit" id='login-button' class="btn btn-lg btn-primary"><i class="fas fa-sign-in-alt"></i>
-                        Sign In</button>
-                </div>
-            </form>
-        </div>
-
-        <!-- Sign Up -->
-        <div class="container border border-primary rounded my-5 w-50" id="sign-up-container">
-
-            <form id="sign-up-form" class="form text-center">
-                <h4 class="m-1 text-center">Not registered yet? Just enter your information below.</h4>
-                <div class="row">
-                    <div class="form-group text-center col-6">
-                        <label for="first-name" class="control-label"></label>
-                        <input required type="first-name" class="form-control text-center text-muted" id="first-name"
-                            placeholder="First Name" required>
-                    </div>
-
-                    <div class="form-group text-center col-6">
-                        <label for="last-name" class="control-label"></label>
-                        <input required type="last-name" class="form-control text-center text-muted" id="last-name"
-                            placeholder="Last Name" required>
-                    </div>
-
-
-                </div>
-
-                <div class="row">
-                    <div class="form-group text-center col-12">
-                        <label for="email" class="control-label"></label>
-                        <input required type="email" class="form-control text-center text-muted" id="create-email" placeholder="Email"
-                            required>
-                    </div>
-
-                </div>
-
-                <div class="row">
-                    <div class="form-group text-center col-6">
-                        <label for="password" class="control-label"></label>
-                        <input required type="password" class="form-control text-center text-muted" id="sign-up-password"
-                            placeholder="Password" required pattern="(?=^.{8,30}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
-                        <small id="passwordHelpInline" class="text-center">
-                            Must be 8-30 characters long and include upper and lower case letters, a number, and a
-                            special
-                            character.
-                        </small>
-                    </div>
-
-                    <div class="form-group text-center col-6">
-                        <label for="verify-password" class="control-label"></label>
-                        <input required type="password" class="form-control text-center text-muted" id="verify-password"
-                            placeholder="Re-Enter Password" required pattern="(?=^.{8,30}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
-                        <small id="passwordHelpInline" class="text-center">
-                            Re-entry password to verify
-                        </small>
-                    </div>
-                </div>
-
-                
-
-                <div class="form-group text-center">
-                    <button type="submit" id="submit-button" class="btn btn-lg btn-primary"><i class="fa fa-user-circle"></i>
-                        Register</button>
-                </div>
-
-            </form>
-
-        </div>
-
-         <!-- Create Project -->
-         <div class="container border border-primary rounded my-5 w-50" id="create-project-container">
-            <form id="create-project-form" class="form text-center">
-                <h4 class="m-1 text-center">Create Project</h4>
-
-                    <div class="form-group text-center">
-                        <label for="project-title" class="control-label"></label>
-                        <input required type="text" class="form-control text-center" id="project-title" placeholder="Title"
-                            required>
-                    </div>
-
-                    <div class="form-group text-center">
-                        <label for="project-description" class="control-label"></label>
-                        <input required type="text" class="form-control text-center" id="project-description"
-                        placeholder="Description">
-                    </div>
-
-                <div class="form-group text-center ">
-                    <button id="submit-project-button" class="btn btn-lg btn-primary"><i class="fas fa-plus"></i>
-                        Create Project</button>
-                </div>
-
-            </form>
-        </div>
-
-        <!-- Edit Project -->
-        <div class="container border border-primary rounded my-5 w-50" id="edit-project-container">
-            <form id="edit-project-form" class="form text-center">
-                <h4 class="m-1 text-center">Edit Project</h4>
-
-                    <div class="form-group text-center">
-                        <label for="edit-project-title" class="control-label"></label>
-                        <input required type="text" class="form-control text-center" id="edit-project-title" required>
-                    </div>
-
-                    <div class="form-group text-center">
-                        <label for="edit-project-description" class="control-label"></label>
-                        <input required type="text" class="form-control text-center" id="edit-project-description">
-                    </div>
-
-                <div class="form-group text-center ">
-                    <button id="submit-edit-project-button" class="btn btn-lg btn-primary"><i class="fas fa-plus"></i>
-                        Submit Changes</button>
-                </div>
-
-            </form>
-        </div>
-
-        <!-- My Projects List -->
-        <div class="container my-5 w-50 text-center" id="my-projects-container">
-            <h4>My Project List</h4>
-            <div class="row" id="my-projects-list-container">
-                <div class="col-12" id="my-projects-list">
-                </div>
+      <!-- Navigation -->
+      <div class="container">
+        <nav class="navbar navbar-expand bg-info text-white" id="nav-bar">
+          <div class="row">
+            <a class="navbar-brand ml-3 w-40"> Project Car Visual Reference </a>
+            <div class="row ml-2">
+              <button id="view-my-projects-button" class="btn btn-primary ml-2">
+                <i class="far fa-folder-open"></i> My Projects
+              </button>
+              <button id="create-project-button" class="btn btn-primary ml-2">
+                <i class="fas fa-plus"></i> Create Project
+              </button>
+              <button id="logout-button" class="btn btn-primary ml-2">
+                <i class="fas fa-sign-out-alt"></i> Logout
+              </button>
             </div>
-        </div>
+          </div>
+        </nav>
+      </div>
 
-        <!-- Project Photos -->
-        <div class="container w-auto p-3" id="project-photos-container">
+      <!-- Login -->
+      <div
+        class="container border border-primary rounded my-5 w-50"
+        id="login-form-container"
+      >
+        <form id="login-form" class="form text-center">
+          <h4 class="m-1 text-center">User Login</h4>
+          <div class="row">
+            <div class="form-group text-center col-12">
+              <label for="email" class="control-label"></label>
+              <input
+                required
+                type="email"
+                class="form-control text-center text-muted"
+                id="email"
+                placeholder="Email"
+                required
+              />
+            </div>
+            <div class="form-group text-center col-12">
+              <label for="password" class="control-label"></label>
+              <input
+                required
+                type="password"
+                class="form-control text-center text-muted"
+                id="password"
+                placeholder="Password"
+                required
+                pattern="(?=^.{8,30}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+              />
+            </div>
+          </div>
+          <div class="form-group text-center ">
+            <button
+              type="submit"
+              id="login-button"
+              class="btn btn-lg btn-primary"
+            >
+              <i class="fas fa-sign-in-alt"></i> Sign In
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Sign Up -->
+      <div
+        class="container border border-primary rounded my-5 w-50"
+        id="sign-up-container"
+      >
+        <form id="sign-up-form" class="form text-center">
+          <h4 class="m-1 text-center">
+            Not registered yet? Just enter your information below.
+          </h4>
+          <div class="row">
+            <div class="form-group text-center col-6">
+              <label for="first-name" class="control-label"></label>
+              <input
+                required
+                type="first-name"
+                class="form-control text-center text-muted"
+                id="first-name"
+                placeholder="First Name"
+                required
+              />
+            </div>
+
+            <div class="form-group text-center col-6">
+              <label for="last-name" class="control-label"></label>
+              <input
+                required
+                type="last-name"
+                class="form-control text-center text-muted"
+                id="last-name"
+                placeholder="Last Name"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group text-center col-12">
+              <label for="email" class="control-label"></label>
+              <input
+                required
+                type="email"
+                class="form-control text-center text-muted"
+                id="create-email"
+                placeholder="Email"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group text-center col-6">
+              <label for="password" class="control-label"></label>
+              <input
+                required
+                type="password"
+                class="form-control text-center text-muted"
+                id="sign-up-password"
+                placeholder="Password"
+                required
+                pattern="(?=^.{8,30}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+              />
+              <small id="passwordHelpInline" class="text-center">
+                Must be 8-30 characters long and include upper and lower case
+                letters, a number, and a special character.
+              </small>
+            </div>
+
+            <div class="form-group text-center col-6">
+              <label for="verify-password" class="control-label"></label>
+              <input
+                required
+                type="password"
+                class="form-control text-center text-muted"
+                id="verify-password"
+                placeholder="Re-Enter Password"
+                required
+                pattern="(?=^.{8,30}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+              />
+              <small id="passwordHelpInline" class="text-center">
+                Re-entry password to verify
+              </small>
+            </div>
+          </div>
+
+          <div class="form-group text-center">
+            <button
+              type="submit"
+              id="submit-button"
+              class="btn btn-lg btn-primary"
+            >
+              <i class="fa fa-user-circle"></i> Register
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Create Project -->
+      <div
+        class="container border border-primary rounded my-5 w-50"
+        id="create-project-container"
+      >
+        <form id="create-project-form" class="form text-center">
+          <h4 class="m-1 text-center">Create Project</h4>
+
+          <div class="form-group text-center">
+            <label for="project-title" class="control-label"></label>
+            <input
+              required
+              type="text"
+              class="form-control text-center"
+              id="project-title"
+              placeholder="Title"
+              required
+            />
+          </div>
+
+          <div class="form-group text-center">
+            <label for="project-description" class="control-label"></label>
+            <input
+              required
+              type="text"
+              class="form-control text-center"
+              id="project-description"
+              placeholder="Description"
+            />
+          </div>
+
+          <div class="form-group text-center ">
+            <button id="submit-project-button" class="btn btn-lg btn-primary">
+              <i class="fas fa-plus"></i> Create Project
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Edit Project -->
+      <div
+        class="container border border-primary rounded my-5 w-50"
+        id="edit-project-container"
+      >
+        <form id="edit-project-form" class="form text-center">
+          <h4 class="m-1 text-center">Edit Project</h4>
+
+          <div class="form-group text-center">
+            <label for="edit-project-title" class="control-label"></label>
+            <input
+              required
+              type="text"
+              class="form-control text-center"
+              id="edit-project-title"
+              required
+            />
+          </div>
+
+          <div class="form-group text-center">
+            <label for="edit-project-description" class="control-label"></label>
+            <input
+              required
+              type="text"
+              class="form-control text-center"
+              id="edit-project-description"
+            />
+          </div>
+
+          <div class="form-group text-center ">
+            <button
+              id="submit-edit-project-button"
+              class="btn btn-lg btn-primary"
+            >
+              <i class="fas fa-plus"></i> Submit Changes
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- My Projects List -->
+      <div class="container my-5 w-50 text-center" id="my-projects-container">
+        <h4>My Project List</h4>
+        <div class="row" id="my-projects-list-container">
+          <div class="col-12" id="my-projects-list"></div>
         </div>
+      </div>
+
+      <!-- Project -->
+      <div class="container w-auto p-3" id="project-container"></div>
+
+      <!-- Add Photos -->
+      <div class="container border border-primary rounded my-5 w-50" id="photos-form-container">
+        <form id="add-photo-form" class="form text-center">
+          <h4 class="m-1 text-center">Add Reference Photo</h4>
+
+          <div class="form-group text-center">
+            <label for="photo-url" class="control-label"></label>
+            <input
+              required
+              type="text"
+              class="form-control text-center"
+              id="photo-url"
+              placeholder="Photo URL"
+            />
+          </div>
+
+          <div class="form-group text-center">
+            <label for="photo-title" class="control-label"></label>
+            <input
+              required
+              type="text"
+              class="form-control text-center"
+              id="photo-title"
+              placeholder="Title"
+            />
+          </div>
+
+          <div class="form-group text-center">
+            <label for="photo-description" class="control-label"></label>
+            <input
+              required
+              type="text"
+              class="form-control text-center"
+              id="photo-description"
+              placeholder="Description"
+            />
+          </div>
+
+          <div class="form-group text-center ">
+            <button id="submit-photo-button" class="btn btn-lg btn-primary">
+              <i class="far fa-images"></i> Submit Photo
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
     <!-- Scripts -->
     <script src="./scripts/render/login.js" charset="utf-8"></script>
     <script src="./scripts/render/signup.js" charset="utf-8"></script>
     <script src="./scripts/render/create-project.js" charset="utf-8"></script>
     <script src="./scripts/render/user-projects.js" charset="utf-8"></script>
-    <script src="./scripts/templates/navigation-template.js" charset="utf-8"></script>
-</body>
-
+    <script src="./scripts/render/add-photo.js" charset="utf-8"></script>
+    <script
+      src="./scripts/templates/navigation-template.js"
+      charset="utf-8"
+    ></script>
+  </body>
 </html>

@@ -30,7 +30,7 @@ const renderUserProject = event => {
   const project = event.target.id;
   localStorage.setItem('project', project);
   axios.get(`http://localhost:8000/projects/${project}`).then(result => {
-    const renderedProject = document.querySelector('#project-photos-container');
+    const renderedProject = document.querySelector('#project-container');
     const photos = result.data.photos;
     const projTitle = result.data.title;
     const projDesc = result.data.description;
@@ -47,9 +47,16 @@ const renderUserProject = event => {
     let editButton = document.createElement('button');
     editButton.setAttribute('id', `${project}`);
     editButton.setAttribute('class', 'btn btn-info btn-block mb-3');
-    editButton.innerHTML = 'Edit';
+    editButton.innerHTML = 'Edit Project Description';
     editButton.addEventListener('click', editProject);
     renderedProject.appendChild(editButton);
+
+    let addPhotoButton = document.createElement('button');
+    addPhotoButton.setAttribute('id', `${project}`);
+    addPhotoButton.setAttribute('class', 'btn btn-info btn-block mb-3');
+    addPhotoButton.innerHTML = 'Add Photo';
+    addPhotoButton.addEventListener('click', addPhoto);
+    renderedProject.appendChild(addPhotoButton);
 
     let deleteButton = document.createElement('button');
     deleteButton.setAttribute('id', `${project}`);
@@ -94,7 +101,6 @@ const deleteUserProject = event => {
 const editUserProject = event => {
   event.preventDefault();
   const id = localStorage.getItem('project');
-  console.log('Does this exist?', id)
   let title = document.querySelector('#edit-project-title').value;
   let description = document.querySelector('#edit-project-description').value;
   axios
